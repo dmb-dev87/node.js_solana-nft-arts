@@ -159,30 +159,35 @@ const getEarring = () => {
   }
 }
 
-const EXPRESSINS_RARITY_5000 = 5000;
-const EXPRESSINS_RARITY_4990 = 4990;
-const EXPRESSINS_RARITY_4930 = 4930;
-const EXPRESSINS_RARITY_4680 = 4680;
+const EXPRESSIONS_RARITY_5000 = 5000;
+const EXPRESSINOS_RARITY_4990 = 4990;
+const EXPRESSINOS_RARITY_4870 = 4870;
+const EXPRESSINOS_RARITY_4500 = 4500;
+const EXPRESSINOS_RARITY_3300 = 3300;
 
 const getExpressions = () => {
-  const _random = Math.floor(Math.random() * EXPRESSINS_RARITY_5000);
+  const _random = Math.floor(Math.random() * EXPRESSIONS_RARITY_5000);
 
-  if (_random < EXPRESSINS_RARITY_4680) {
+  if (_random < EXPRESSINOS_RARITY_3300) {
+    return randomElement([
+      'Blink', 'Honest', 'Meditating', 'OHM Meditation', 'Smile'      
+    ]);
+  } else if (_random < EXPRESSINOS_RARITY_4500) {
     return randomElement([
       'Keeping a Blue Daisy', 'Keeping a Blue Lily Flower',
       'Keeping a Pink Lily FLower', 'Keeping a Pink Tulip',
       'Keeping a white Daisy', 'Keeping a Yellow Tulip',
       'Keeping multicolor quatrifoil', 'Keping a Quatrifoil'
-    ]);
-  } else if (_random < EXPRESSINS_RARITY_4930) {
-    return randomElement([
-      'Blink', 'Honest', 'OHM Meditation', 'Relaxed', 'Smile'
     ])
-  } else if (_random < EXPRESSINS_RARITY_4990) {
+  } else if (_random < EXPRESSINOS_RARITY_4870) {
     return randomElement([
-      'Meditating', 'Nerd'
+      'Nerd'
     ])
-  } else if (_random < EXPRESSINS_RARITY_5000) {
+  } else if (_random < EXPRESSINOS_RARITY_4990) {
+    return randomElement([
+      'Relaxed'
+    ])
+  } else if (_random < EXPRESSIONS_RARITY_5000) {
     return randomElement([
       'Drinking Coke'
     ])

@@ -76,14 +76,14 @@ const build = async(index, onComplete) => {
 
   _composedImage.blit(hatshairJimp, 0, 0);
 
-  await _composedImage.write('Output/' + index + '.png');
+  await _composedImage.write('assets/' + index + '.png');
   await sleep(20);
   const _readableStream = await fs.createReadStream(_path +
-    '/Output/' +
+    '/assets/' +
     index +
     '.png');
     
-  await fs.writeFileSync("Output/" + index + '.json', JSON.stringify({
+  await fs.writeFileSync("assets/" + index + '.json', JSON.stringify({
     "name": "Solana Baby Buddhas #" + index,
     "symbol": "SBB",
     "creators": [
