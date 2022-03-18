@@ -105,7 +105,7 @@ const build = async(index, onComplete) => {
       "creators": [
           {
               "address": "2h3g1F3BDZcoQ969bWbZrB3zkjQscDa94awnbmDQXrgB",
-              "share": 5000
+              "share": 100
           }
       ]
     },
