@@ -1,10 +1,5 @@
-// require('dotenv').config();
 const Jimp = require('jimp');
 const fs = require('fs');
-// const pinataSDK = require('@pinata/sdk');
-
-// const pinata = pinataSDK(process.env.PINATA_KEY,
-//   process.env.PINATA_API_SECRET);
 
 const Traits = require('./traits');
 
@@ -84,13 +79,13 @@ const build = async(index, onComplete) => {
     '.png');
     
   await fs.writeFileSync("assets/" + index + '.json', JSON.stringify({
-    "name": "Solana Baby Buddhas #" + index,
-    "symbol": "SBB",
+    "name": "Buddha NFT #" + index,
+    "symbol": "BUDDHA",
     "creators": [
-        "2h3g1F3BDZcoQ969bWbZrB3zkjQscDa94awnbmDQXrgB"
+        "0x04BFca9b23e8110E10C28941E9A9c2f833019d0D"
     ],
     "collection": {
-        "name": "Solana Baby Buddhas"
+        "name": "Buddha NFT"
     },
     "image": index + ".png",
     "attributes": _traits,
@@ -104,12 +99,12 @@ const build = async(index, onComplete) => {
       "category": "image",
       "creators": [
           {
-              "address": "2h3g1F3BDZcoQ969bWbZrB3zkjQscDa94awnbmDQXrgB",
-              "share": 100
+              "address": "0x04BFca9b23e8110E10C28941E9A9c2f833019d0D",
+              "share": 5000
           }
       ]
     },
-    "description": "From the original Solana Baby Buddhas Collection - Grow your wealth and Expand your consciusness!",
+    "description": "From the original Buddha NFT Collection - Grow your wealth and Expand your consciusness!",
     "external_link": "https://www.cryptobuddhas.org/"
   }));
 
