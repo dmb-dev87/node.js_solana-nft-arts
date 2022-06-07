@@ -7,7 +7,7 @@ const sleep = (ms) => {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-const build = async(index, onComplete) => {
+const build = async (index, onComplete) => {
   const _path = './';
   var _traits = [];
 
@@ -27,7 +27,7 @@ const build = async(index, onComplete) => {
   const dressJimp = await Jimp.read(_path +
     '/Traits/Dress/' +
     dress +
-    '.png');  
+    '.png');
   _traits.push({
     'trait_type': 'Dress',
     'value': dress
@@ -77,34 +77,34 @@ const build = async(index, onComplete) => {
     '/assets/' +
     index +
     '.png');
-    
+
   await fs.writeFileSync("assets/" + index + '.json', JSON.stringify({
-    "name": "Buddha NFT #" + index,
-    "symbol": "BUDDHA",
+    "name": "Solana Baby Buddhas #" + index,
+    "symbol": "SBB",
     "creators": [
-        "0x04BFca9b23e8110E10C28941E9A9c2f833019d0D"
+      "2h3g1F3BDZcoQ969bWbZrB3zkjQscDa94awnbmDQXrgB"
     ],
     "collection": {
-        "name": "Buddha NFT"
+      "name": "Solana Baby Buddhas"
     },
     "image": index + ".png",
     "attributes": _traits,
     "properties": {
       "files": [
-          {
-              "uri": index + ".png",
-              "type": "image/png"
-          }
+        {
+          "uri": index + ".png",
+          "type": "image/png"
+        }
       ],
       "category": "image",
       "creators": [
-          {
-              "address": "0x04BFca9b23e8110E10C28941E9A9c2f833019d0D",
-              "share": 5000
-          }
+        {
+          "address": "2h3g1F3BDZcoQ969bWbZrB3zkjQscDa94awnbmDQXrgB",
+          "share": 100
+        }
       ]
     },
-    "description": "From the original Buddha NFT Collection - Grow your wealth and Expand your consciusness!",
+    "description": "From the original Solana Baby Buddhas Collection - Grow your wealth and Expand your consciusness!",
     "external_link": "https://www.cryptobuddhas.org/"
   }));
 
