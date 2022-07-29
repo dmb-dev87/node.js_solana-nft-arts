@@ -3,6 +3,8 @@ const fs = require('fs');
 
 const Traits = require('./traits');
 
+const base_uri = "ipfs://QmPZepqs94GxFaDCoW1CMFnFsrNMWwCH8ReVxmZU54JreJ";
+
 const sleep = (ms) => {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -79,32 +81,17 @@ const build = async (index, onComplete) => {
     '.png');
 
   await fs.writeFileSync("assets/" + index + '.json', JSON.stringify({
-    "name": "Solana Baby Buddhas #" + index,
+    "name": "Buddha NFT #" + index,
+    "description": "A collection of Buddha NFTs on the Ethereum Blockchain",
+    "image": base_uri + '/' + index + ".png",
+    "attributes": _traits,
     "symbol": "SBB",
     "creators": [
-      "2h3g1F3BDZcoQ969bWbZrB3zkjQscDa94awnbmDQXrgB"
+      "0x04BFca9b23e8110E10C28941E9A9c2f833019d0D"
     ],
     "collection": {
-      "name": "Solana Baby Buddhas"
+      "name": "Buddha NFTs"
     },
-    "image": index + ".png",
-    "attributes": _traits,
-    "properties": {
-      "files": [
-        {
-          "uri": index + ".png",
-          "type": "image/png"
-        }
-      ],
-      "category": "image",
-      "creators": [
-        {
-          "address": "2h3g1F3BDZcoQ969bWbZrB3zkjQscDa94awnbmDQXrgB",
-          "share": 100
-        }
-      ]
-    },
-    "description": "From the original Solana Baby Buddhas Collection - Grow your wealth and Expand your consciusness!",
     "external_link": "https://www.cryptobuddhas.org/"
   }));
 
